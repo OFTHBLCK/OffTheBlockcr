@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Off The Block - Tienda Urbana</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #0b152f;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .background-logo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('logo_offtheblock.jpg') no-repeat center center;
+      background-size: cover;
+      opacity: 0.4;
+      z-index: -2;
+      filter: brightness(60%);
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.75);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      z-index: -1;
+    }
+
+    .content {
+      text-align: center;
+      padding: 60px 20px;
+      z-index: 10;
+      position: relative;
+    }
+
+    .content h1 {
+      font-size: 3em;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      font-family: 'Impact', sans-serif;
+    }
+
+    .whatsapp-button {
+      background-color: #25D366;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      z-index: 10;
+      position: relative;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #1ebd5a;
+    }
+
+    footer {
+      position: relative;
+      background-color: #111;
+      background-image: url('llamas_footer.png');
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      background-size: contain;
+      text-align: center;
+      padding: 20px 10px 80px;
+      font-size: 14px;
+      color: #aaa;
+      z-index: 10;
+      position: relative;
+    }
+
+    footer img.bandera {
+      width: 30px;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+
+    /* FUEGO ANIMADO - ancho completo y posición fija */
+    .mo-fire {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100vw; /* ancho total de la ventana */
+      height: 550px;
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mo-fire svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .marca-agua {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+      font-size: 14px;
+      color: black;
+      font-weight: bold;
+      font-family: sans-serif;
+    }
+
+    .marca-agua img {
+      display: block;
+      margin: 2px auto 0;
+      height: 16px;
+    }
+
+    /* Evitar scroll horizontal */
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fondo del logo oscurecido -->
+  <div class="background-logo"></div>
+
+  <!-- Capa negra semitransparente -->
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h1>Urban Style Est. 2004</h1>
+    <a class="whatsapp-button" href="https://wa.me/50687495837" target="_blank">
+      Chatear por WhatsApp
+    </a>
+  </div>
+
+  <!-- 🔥 FUEGO ANIMADO ancho completo -->
+  <div class="mo-fire">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1016 400" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:orange; stop-opacity:1" />
+          <stop offset="50%" style="stop-color:orangered; stop-opacity:0.85" />
+          <stop offset="100%" style="stop-color:red; stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <path fill="url(#grad1)">
+        <animate 
+          attributeName="d" 
+          dur="4s" 
+          repeatCount="indefinite" 
+          values="
+            M0,400 
+            C150,280 300,360 450,300 
+            C600,260 750,380 900,320 
+            C950,280 980,400 1016,300 
+            L1016,400 L0,400 Z;
+
+            M0,400 
+            C120,330 270,290 420,350 
+            C570,410 720,280 870,340 
+            C940,400 980,310 1016,360 
+            L1016,400 L0,400 Z;
+
+            M0,400 
+            C150,280 300,360 450,300 
+            C600,260 750,380 900,320 
+            C950,280 980,400 1016,300 
+            L1016,400 L0,400 Z
+          " />
+      </path>
+    </svg>
+  </div>
+
+  <!-- 📝 MARCA DE AGUA -->
+  <div class="marca-agua">
+    <p>Todos los derechos reservados OffTheBlock 2025</p>
+    <img src="https://flagcdn.com/w40/cr.png" alt="Bandera de Costa Rica">
+  </div>
+
+</body>
+</html>
